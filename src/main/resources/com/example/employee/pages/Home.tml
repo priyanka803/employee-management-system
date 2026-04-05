@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
+<body style="margin: 10px;">
+    <h3>Hello, ${username}</h3>
+
+    <t:page link page="Index">Home</t:page link><br/><br/>
+
+    <t:group>
+        <t:sourcecode src="/web/src/main/java/upstart/web/pages/HelloWorld.tml"/>
+        <t:sourcecode src="/web/src/main/java/upstart/web/pages/HelloWorld.java"/>
+    </t:group>
+</body>
+</html>
