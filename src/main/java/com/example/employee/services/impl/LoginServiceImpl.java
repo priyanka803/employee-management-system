@@ -1,6 +1,8 @@
-package com.example.employee.services;
+package com.example.employee.services.impl;
 
-public class LoginServiceImpl implements LoginService{
+import com.example.employee.services.LoginService;
+
+public class LoginServiceImpl implements LoginService {
     private static final String USERNAME = "admin";
     private static final String PASSWORD = "1234";
 
