@@ -1,13 +1,22 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
 <head>
     <title>Employee List</title>
 </head>
 <body>
-
+<t:header/>
 <h2>Employee List</h2>
 
-<t:grid source="employees"/>
+<t:grid source="employees" row="employee" add="action">
+    <p:idCell>
+        <t:pagelink page="EmployeeDetails" context="employee.id">${employee.id}</t:pagelink>
+    </p:idCell>
+    <p:actionCell>
+        <t:pagelink page="EmployeeDetails" context="employee.id">
+            View
+        </t:pagelink>
+    </p:actionCell>
 
+</t:grid>
 <!--<t:grid source="employees" row="employee">-->
 
 <!--    <t:column name="id" value="employee.id"/>-->
@@ -22,8 +31,8 @@
 <!--    </t:column>-->
 
 <!--</t:grid>-->
-<!--<t:pagelink page="AddEmployee" >-->
-<!--    Add New Employee-->
-<!--</t:pagelink>-->
+<t:pagelink page="AddEmployee" >
+    Add New Employee
+</t:pagelink>
 </body>
 </html>

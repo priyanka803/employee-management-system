@@ -1,12 +1,18 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
-<body style="margin: 10px;">
-    <h3>Hello, ${username}</h3>
+<body class="container">
+<h3>Better Output</h3>
 
-    <t:page link page="Index">Home</t:page link><br/><br/>
+As Tapestry generates, or <em>renders</em>, a page, it will call the page's
+<code>setupRender()</code> method if the page has one.<br/>
+When a field is annotated with <code>@Property</code>, Tapestry creates getter and setter methods for it at runtime.<br/>
 
-    <t:group>
-        <t:sourcecode src="/web/src/main/java/upstart/web/pages/HelloWorld.tml"/>
-        <t:sourcecode src="/web/src/main/java/upstart/web/pages/HelloWorld.java"/>
-    </t:group>
+<div class="eg">
+    <p>
+        ${message}<br/>
+        ${message}<br/>
+        ${message}<br/>
+    </p>
+</div>
+<t:pagelink page="Index">Go Home</t:pagelink>
 </body>
 </html>

@@ -1,7 +1,9 @@
 package com.example.employee.services.impl;
 
 import com.example.employee.services.LoginService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class LoginServiceImpl implements LoginService {
     private static final String USERNAME = "admin";
     private static final String PASSWORD = "1234";

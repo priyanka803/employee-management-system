@@ -1,12 +1,13 @@
 package com.example.employee.pages;
 import com.example.employee.services.LoginService;
-import com.example.employee.services.impl.LoginServiceImpl;
 import jakarta.inject.Inject;
+import org.apache.tapestry5.ValidationTracker;
+import org.apache.tapestry5.annotations.Environmental;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.beaneditor.Validate;
 
 
-public class Login {
+public class Index {
 
     @Inject
     private LoginService loginService;
@@ -23,6 +24,9 @@ public class Login {
 
     @Property
     private String error;
+
+    @Environmental
+    private ValidationTracker tracker;
 //
 //    public List<Employee> getEmployees() {
 //        List<Employee> list = new ArrayList<>();
@@ -34,13 +38,18 @@ public class Login {
 //    }
 
     public Object onSuccess() {
-        if (!loginService.validate(username, password)) {
-            error = "Invalid credentials!";
-            return null;
-        }
         return EmployeeList.class;
-        //return Welcome.class;
-
     }
+    void onValidate(){
+        if (!loginService.validate(username, password)) {
+            // System.out.println("Invalid");
+            error = "Invalid credentials!";
+            tracker.recordError(error);
+        }
+    }
+//    void setupRender() {
+//       // username = "Amit";
+//        error="Invalid";
+//    }
 
 }

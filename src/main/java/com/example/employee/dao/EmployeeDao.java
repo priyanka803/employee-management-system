@@ -1,0 +1,12 @@
+package com.example.employee.dao;
+
+import com.example.employee.model.Employee;
+
+import java.util.List;
+
+public interface EmployeeDao {
+    public void saveEmployee(Employee employee);
+    public Employee getById(int id);
+    public List<Employee> getAll();
+
+    }

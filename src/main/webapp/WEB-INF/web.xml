@@ -18,7 +18,7 @@
 <!--  </filter-mapping>-->
   <filter>
     <filter-name>Employee</filter-name>
-    <filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
+    <filter-class>org.apache.tapestry5.spring.TapestrySpringFilter</filter-class>
     <!-- Or org.apache.tapestry5.http.TapestryFilter if you're using tapestry-http without tapestry-core -->
   </filter>
   <filter-mapping>
