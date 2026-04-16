@@ -13,6 +13,9 @@
     <th>Name</th>
     <th>Age</th>
     <th>Address</th>
+    <th>Gender</th>
+    <th>Designation</th>
+    <th>Dob</th>
     </thead>
     <tbody>
     <tr>
@@ -20,6 +23,9 @@
         <td>${employee.name}</td>
         <td>${employee.age}</td>
         <td>${employee.address}</td>
+        <td>${employee.gender}</td>
+        <td>${employee.designation}</td>
+        <td>${employee.dob}</td>
     </tr>
     </tbody>
 </table>

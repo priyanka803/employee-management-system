@@ -1,0 +1,53 @@
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
+<head>
+    <title>Employee View</title>
+</head>
+<body>
+<t:header/>
+
+<div class="container" style="margin-top: 40px;">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Employee Information</h3>
+                </div>
+                <div class="panel-body">
+                    <p class="lead"><strong>Name:</strong> ${employee.name}</p>
+                    <p class="lead"><strong>Designation:</strong> ${employee.designation}</p>
+
+                    <hr/>
+
+                    <div class="btn-group">
+                        <t:actionlink t:id="showImage" class="btn btn-info">View Image</t:actionlink>
+                        <t:eventlink event="promote" class="btn btn-success">PROMOTE</t:eventlink>
+                        <t:pagelink page="Index" class="btn btn-default">CLOSE</t:pagelink>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<t:if test="showImagePopup">
+    <div id="imageOverlay" class="modal-overlay">
+
+        <div class="panel panel-default modal-popup-box">
+            <h4>Employee Profile</h4>
+            <hr/>
+
+            <img src="/employee/images/${employee.fileName}" class="img-thumbnail" width="250" alt="Profile Picture"/>
+            <br/><br/>
+            <button class="btn btn-danger" onclick="this.parentElement.parentElement.style.display='none'">
+                Close
+            </button>
+        </div>
+
+    </div>
+</t:if>
+
+</body>
+</html>

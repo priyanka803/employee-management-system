@@ -8,7 +8,8 @@
 
 <h2>Add Employee</h2>
 
-<t:form >
+<!--<t:form enctype="multipart/form-data" method="post">-->
+    <t:form>
 
     <div>
         <label>Name:</label>
@@ -17,14 +18,25 @@
 
     <div>
         <label>Age:</label>
-        <t:textfield t:value="age"/>
+        <t:textfield t:value="age" type="number"/>
     </div>
-
+        <div>
+            <label>Date Of Birth:</label>
+            <t:textfield t:value="dob" type="date"/>
+        </div>
+        <div>
+            <label>Gender:</label>
+            <t:select t:value="gender" class="form-select"/>
+        </div>
     <div>
         <label>Address:</label>
         <t:textfield t:value="address"/>
     </div>
-
+    <div>
+    <label>Profile picture:</label>
+        <t:upload t:id="file" t:value="file"/>
+    </div>
+        <br></br>
     <div>
         <t:submit value="Save"/>
     </div>

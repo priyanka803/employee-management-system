@@ -1,10 +1,8 @@
 package com.example.employee.model;
+import com.example.employee.constants.Gender;
+import jakarta.persistence.*;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Employee {
@@ -15,12 +13,21 @@ public class Employee {
     private String name;
     private int age;
     private String address;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+    private String designation;
+    private String fileName;
+    private String dob;
 
-    public Employee(int id, String name, int age, String address) {
-        this.id = id;
+
+    public Employee(String name, int age, String address, String dob, Gender gender, String designation, String fileName) {
         this.name = name;
         this.age = age;
         this.address = address;
+        this.dob = dob;
+        this.gender = gender;
+        this.designation = designation;
+        this.fileName = fileName;
     }
 
     public Employee() {
@@ -58,4 +65,37 @@ public class Employee {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 }
+

@@ -6,31 +6,21 @@
 <t:header/>
 <h2>Employee List</h2>
 
-<t:grid source="employees" row="employee" add="action">
+<t:grid source="employees" row="employee" add="action" exclude="fileName">
+<!--    <p:dobHeader>-->
+<!--        Date Of Birth-->
+<!--    </p:dobHeader>-->
     <p:idCell>
         <t:pagelink page="EmployeeDetails" context="employee.id">${employee.id}</t:pagelink>
     </p:idCell>
     <p:actionCell>
-        <t:pagelink page="EmployeeDetails" context="employee.id">
+        <t:pagelink page="EmployeeView" context="employee.id">
             View
         </t:pagelink>
     </p:actionCell>
 
 </t:grid>
-<!--<t:grid source="employees" row="employee">-->
 
-<!--    <t:column name="id" value="employee.id"/>-->
-<!--    <t:column name="name" value="employee.name"/>-->
-<!--    <t:column name="email" value="employee.email"/>-->
-
-<!--    &lt;!&ndash; 🔹 View Column &ndash;&gt;-->
-<!--    <t:column name="view">-->
-<!--        <t:pagelink page="EmployeeDetail" context="employee.id">-->
-<!--            View-->
-<!--        </t:pagelink>-->
-<!--    </t:column>-->
-
-<!--</t:grid>-->
 <t:pagelink page="AddEmployee" >
     Add New Employee
 </t:pagelink>

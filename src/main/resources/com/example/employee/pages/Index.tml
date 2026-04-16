@@ -10,7 +10,7 @@
     <t:Header/>
 <div class="col-md-4">
     <h2 class="text-center mb-4">Employee Login</h2>
-<t:form style="border:1px solid; padding:20px;">
+<t:form t:id="loginForm" style="border:1px solid; padding:20px;">
     <t:errors/>
     <div class="mb-3">
     <label>Username:</label>
@@ -22,9 +22,6 @@
     </div>
     <t:submit value="Login"/>
 </t:form >
-<!--<t:if test="error">-->
-<!--    <p style="color:red;">${error}</p>-->
-<!--</t:if>-->
 </div>
 </div>
 </div>

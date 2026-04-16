@@ -28,10 +28,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
         return session.createQuery("from Employee e order by e.id asc", Employee.class).list();
     }
 
-
     @Override
     @Transactional
-    public void saveEmployee(Employee employee){
+    public void saveOrUpdateEmployee(Employee employee){
         sessionFactory.getCurrentSession().merge(employee);
     }
 }

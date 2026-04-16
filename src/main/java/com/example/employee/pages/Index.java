@@ -12,8 +12,6 @@ public class Index {
     @Inject
     private LoginService loginService;
 
-    //  private LoginService loginService=new LoginServiceImpl();
-
     @Property
     @Validate("required")
     private String username;
@@ -27,29 +25,16 @@ public class Index {
 
     @Environmental
     private ValidationTracker tracker;
-//
-//    public List<Employee> getEmployees() {
-//        List<Employee> list = new ArrayList<>();
-//
-//        list.add(new Employee(1, "Priyanka", 25, "Delhi"));
-//        list.add(new Employee(2, "Rahul", 30, "Noida"));
-//
-//        return list;
-//    }
 
-    public Object onSuccess() {
+    public Object onSuccessFromLoginForm() {
         return EmployeeList.class;
     }
-    void onValidate(){
+
+    void onValidateFromLoginForm(){
         if (!loginService.validate(username, password)) {
             // System.out.println("Invalid");
             error = "Invalid credentials!";
             tracker.recordError(error);
         }
     }
-//    void setupRender() {
-//       // username = "Amit";
-//        error="Invalid";
-//    }
-
 }
