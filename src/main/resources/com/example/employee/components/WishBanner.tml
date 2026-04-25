@@ -1,0 +1,14 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+    <div style="background-color: ${bannerColor}; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 25px; border: 1px solid #ccc; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+        <h2 style="margin: 0; color: #333;">
+             Happy Birthday, ${employee.name}!
+        </h2>
+        <p style="margin-top: 5px; color: #555; font-size: 1.1em;">
+            Wishing you a fantastic day from Kane Solutions!
+        </p>
+
+    </div>
+
+</t:container>

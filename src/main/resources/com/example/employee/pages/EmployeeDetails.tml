@@ -16,6 +16,9 @@
     <th>Gender</th>
     <th>Designation</th>
     <th>Dob</th>
+    <t:if test="canEdit">
+    <th>Action</th>
+    </t:if>
     </thead>
     <tbody>
     <tr>
@@ -26,10 +29,18 @@
         <td>${employee.gender}</td>
         <td>${employee.designation}</td>
         <td>${employee.dob}</td>
+        <t:if test="canEdit">
+        <td>
+            <t:pagelink page="EditEmployee" context="employee.id">
+                Edit
+            </t:pagelink>
+        </td>
+        </t:if>
     </tr>
     </tbody>
 </table>
+<t:if test="admin">
 <t:pagelink page="EmployeeList">Back to List</t:pagelink>
-
+</t:if>
 </body>
 </html>

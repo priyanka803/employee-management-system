@@ -1,0 +1,41 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Edit Employee</title>
+</head>
+<body>
+<div style="padding:20px">
+    <t:Header/>
+    <t:alerts/>
+    <h2>Add Employee</h2>
+    <t:form>
+
+        <div>
+            <label>Name:</label>
+            <t:textfield t:value="name"/>
+        </div>
+
+        <div>
+            <label>Age:</label>
+            <t:textfield t:value="age" type="number" onblur="validateAge(this.value);"/>
+        </div>
+        <div>
+            <label>Date Of Birth:</label>
+            <t:textfield t:value="dob" type="date"/>
+        </div>
+        <div>
+            <label>Gender:</label>
+            <t:select t:value="gender" class="form-select"/>
+        </div>
+        <div>
+            <label>Address:</label>
+            <t:textfield t:value="address"/>
+        </div>
+        <br></br>
+        <div>
+            <t:submit value="Save"/>
+        </div>
+
+    </t:form>
+</div>
+</body>
+</html>

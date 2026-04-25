@@ -4,9 +4,9 @@
 </head>
 <body>
 <t:header/>
-<h2>Employee List</h2>
 
-<t:grid source="employees" row="employee" add="action" exclude="fileName">
+<h2>Employee List</h2>
+<t:grid source="employees" row="employee" add="prop:gridAddedColumns" exclude="fileName,password,role_id">
 <!--    <p:dobHeader>-->
 <!--        Date Of Birth-->
 <!--    </p:dobHeader>-->
@@ -14,15 +14,22 @@
         <t:pagelink page="EmployeeDetails" context="employee.id">${employee.id}</t:pagelink>
     </p:idCell>
     <p:actionCell>
+        <t:if test="canView">
+
         <t:pagelink page="EmployeeView" context="employee.id">
             View
         </t:pagelink>
+        </t:if>
     </p:actionCell>
 
 </t:grid>
-
+<t:if test="isBirthday">
+    <t:WishBanner employee="birthdayEmployee"/>
+</t:if>
+<t:if test="canAdd">
 <t:pagelink page="AddEmployee" >
     Add New Employee
 </t:pagelink>
+</t:if>
 </body>
 </html>

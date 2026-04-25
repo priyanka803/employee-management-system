@@ -48,4 +48,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeDao.saveOrUpdateEmployee(emp);
         //employees.add(emp);
     }
+    @Override
+    public Employee getEmployeeByEmail(String email) {
+        return employeeDao.getByEmail(email);
+    }
 }

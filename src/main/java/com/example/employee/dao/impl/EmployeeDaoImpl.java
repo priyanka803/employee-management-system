@@ -20,12 +20,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
     @Override
     public Employee getById(int id){
-       return sessionFactory.getCurrentSession().find(Employee.class,id);
+
+        return sessionFactory.getCurrentSession().find(Employee.class,id);
     }
     @Override
     public List<Employee> getAll(){
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from Employee e order by e.id asc", Employee.class).list();
+    }
+
+    @Override
+    public Employee getByEmail(String email) {
+        return sessionFactory.getCurrentSession().find(Employee.class,email);
     }
 
     @Override

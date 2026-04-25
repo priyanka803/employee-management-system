@@ -8,4 +8,5 @@ public interface EmployeeDao {
     public void saveOrUpdateEmployee(Employee employee);
     public Employee getById(int id);
     public List<Employee> getAll();
+    public Employee getByEmail(String email);
     }

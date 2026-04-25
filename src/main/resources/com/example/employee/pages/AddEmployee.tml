@@ -18,7 +18,7 @@
 
     <div>
         <label>Age:</label>
-        <t:textfield t:value="age" type="number"/>
+        <t:textfield t:value="age" type="number" onblur="validateAge(this.value);"/>
     </div>
         <div>
             <label>Date Of Birth:</label>
@@ -32,6 +32,14 @@
         <label>Address:</label>
         <t:textfield t:value="address"/>
     </div>
+        <div>
+        <label>Email:</label>
+        <t:textfield t:value="email"/>
+        </div>
+        <div>
+        <label>Password:</label>
+        <t:passwordfield t:value="password"/>
+        </div>
     <div>
     <label>Profile picture:</label>
         <t:upload t:id="file" t:value="file"/>
